@@ -5,3 +5,11 @@ if ! which brew > /dev/null; then
 else
     echo "Brew is installed"
 fi
+
+#Check if mas-cli is installed 
+
+if ! which mas > /dev/null; then
+    echo "mas-cli is not installed"; exit
+else
+    echo "mas-cli is installed"
+fi
