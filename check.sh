@@ -10,6 +10,7 @@ check_installed () {
 
 check_installed brew
 check_installed mas
+check_installed whalebrew
 
 #Check if .Brewfile is exist
 
