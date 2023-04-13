@@ -13,3 +13,12 @@ if ! which mas > /dev/null; then
 else
     echo "mas-cli is installed"
 fi
+
+#Check if .Brewfile is exist
+
+BREWFILE=~/.Brewfile
+if [ -f "$BREWFILE" ]; then
+    echo "$BREWFILE exists."
+else 
+    echo "$BREWFILE does not exist."; exit
+fi
