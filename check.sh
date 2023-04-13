@@ -1,4 +1,4 @@
-#Check if all software is installed
+#Check if software is installed
 
 check_installed () {
     if ! which ${1} > /dev/null; then
@@ -8,15 +8,17 @@ check_installed () {
     fi
 }
 
+#Check if file exists
+
+check_file_exist () {
+    if [ -f "${1}" ]; then
+        echo "${1} exists."
+    else
+        echo "${1} does not exist."; exit
+    fi
+}
+
 check_installed brew
 check_installed mas
 check_installed whalebrew
-
-#Check if .Brewfile is exist
-
-BREWFILE=~/.Brewfile
-if [ -f "$BREWFILE" ]; then
-    echo "$BREWFILE exists."
-else 
-    echo "$BREWFILE does not exist."; exit
-fi
+check_file_exist ~/.Brewfile
