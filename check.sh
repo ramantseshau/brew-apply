@@ -1,18 +1,15 @@
-#Check if Homebrew is installed
+#Check if all software is installed
 
-if ! which brew > /dev/null; then
-    echo "Brew is not installed"; exit
-else
-    echo "Brew is installed"
-fi
+check_installed () {
+    if ! which ${1} > /dev/null; then
+        echo "${1} is not installed"; exit
+    else
+        echo "${1} is installed"
+    fi
+}
 
-#Check if mas-cli is installed 
-
-if ! which mas > /dev/null; then
-    echo "mas-cli is not installed"; exit
-else
-    echo "mas-cli is installed"
-fi
+check_installed brew
+check_installed mas
 
 #Check if .Brewfile is exist
 
